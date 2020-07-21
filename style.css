@@ -2,6 +2,9 @@
 
 :root {
     --color-pink: rgb(253, 0, 139);
+    --color-starter: rgb(113, 89, 193);
+    --color-launchbase: rgb(253, 149, 31);
+    --color-gostack: rgb(4, 211, 97);
 }
 
 * {
@@ -11,18 +14,19 @@
 }
 
 body {
-    background: #282a36;
+    background-image: url(image/universo.jpg);
     font-family: 'Roboto', sans-serif;
     color: white;
 }
 
 header {
     padding: 30px;
-    background: rgba(0, 0, 0, 0.1)
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
 }
 
 .links {
-    text-align: center;
+    margin: 0 auto;
 }
 
 .links a {
@@ -34,7 +38,8 @@ header {
 }
 
 .links a:hover {
-    color: var(--color-pink);
+    font-weight: bold;
+    color: var(--color-starter);
     transition: color 350ms;
 }
 
@@ -44,7 +49,7 @@ header {
 
 #wrapper img {
     border-radius: 50%;
-    border: 3px solid var(--color-pink);
+    border: 3px solid white;
     margin-bottom: 32px;
     margin-top: 22px;
     height: 220px;
@@ -74,8 +79,27 @@ header {
     list-style-type: square;
 }
 
+#links-footer {
+    text-align: center;
+    margin: 0 auto;
+}
+
 #links-footer a {
-    border-bottom: 1px solid var(--color-pink);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 19px;
+}
+
+#links-footer a:hover {
+    font-weight: bold;
+    color: var(--color-starter);
+    transition: color 350ms;
+}
+
+#links-footer a {
+    border-bottom: 1px solid var(--color-starter);
 }
 
 /*===GRIDS===*/
@@ -93,6 +117,8 @@ header {
     background-color: rgba(0, 0, 0, 0.521);
     border-radius: 10px;
     position: relative;
+    cursor: pointer;
+    border: 2px solid black;
 }
 
 .image {
@@ -104,39 +130,138 @@ header {
     transform: translate(-50%, -50%)
 }
 
-.image p {
-    max-width: 270px;
+.trilha-content {
+    padding: 30px;
     text-align: center;
-    color: rgb(135, 134, 139);
+    color: rgb(202, 202, 202);
     font-size: 16px;
     line-height: 26px;
-    padding: 45px;
-    height: 78px;
     width: 270px;
+    height: 78px;
 }
 
-.starter {
-    border-color: rgb(113, 89, 193);
+.card__info p {
+    color: rgb(135, 134, 139);
+    padding: 5px 20px;
 }
 
-.launchbase {
-    border-style: solid;
-    border-color: rgb(253, 149, 31);
+.card__info {
+    text-align: center;
+    margin-top: 35px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.gostack {
-    border-color: rgb(4, 211, 97);
+
+/*===CORES DOS CARDS===*/
+#starter.trilha:hover{
+    box-shadow: inset 0 0 1em var(--color-starter), 0 0 3em var(--color-starter);
+    border: 3px solid var(--color-starter);
+    transform: translateY(-10px);
+    transition: 0.5s;
 }
 
+#launchbase.trilha:hover{
+    box-shadow: inset 0 0 1em var(--color-launchbase), 0 0 2em var(--color-launchbase);
+    border: 3px solid var(--color-launchbase);
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
+
+#gostack.trilha:hover{
+    box-shadow: inset 0 0 1em var(--color-gostack), 0 0 2em var(--color-gostack);
+    border: 3px solid var(--color-gostack);
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
 
 .p-launchbase {
-    color: rgb(253, 149, 31);
+    color: var(--color-launchbase);
 }
 
 .p-starter {
-    color: rgb(113, 89, 193);
+    color: var(--color-starter);
 }
 
 .p-gostack {
-    color: rgb(4, 211, 97);
+    color: var(--color-gostack)
+}
+
+#card-starter.card__price {
+    background-color: var(--color-starter);
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: white;
+}
+#card-launchbase.card__price {
+    background-color: var(--color-launchbase);
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: white;
+}
+#card-gostack.card__price {
+    background-color: var(--color-gostack);
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: white;
+}
+
+/*=== MODAL ===*/
+.modal-overlay{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 60%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.buttons-modal {
+    color: black;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.buttons-modal i {
+    margin: 0 3px;
+    
+}
+
+/*===MODAL.ACTIVE===*/
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 7%;
+}
+
+/*===MODAL MAXIMIZE===*/
+
+.modal.maximize {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
 }
