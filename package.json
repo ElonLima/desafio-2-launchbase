@@ -1,0 +1,21 @@
+{
+  "name": "desafio-3",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErickBareiro/desafio-2-launchbase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ErickBareiro/desafio-2-launchbase/issues"
+  },
+  "homepage": "https://github.com/ErickBareiro/desafio-2-launchbase#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "nunjucks": "^3.2.2"
+  }
+}
