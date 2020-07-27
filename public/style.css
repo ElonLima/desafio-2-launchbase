@@ -13,9 +13,10 @@
 }
 
 body {
-    background-image: url(image/universo.jpg);
+    background-image: url(image/universo-2.jpg);
     font-family: 'Roboto', sans-serif;
     color: white;
+    background-repeat: unset;
 }
 
 header {
@@ -26,6 +27,7 @@ header {
 }
 
 .links {
+    margin: 0 auto;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 208px;
@@ -267,4 +269,26 @@ iframe {
     height: 100%;
     margin: 0 auto;
     position: relative;
+}
+
+/*===NOT FOUND 404*/
+
+.not-found {
+    background-color: white;
+    margin: 60px 283px;
+    border-radius: 90px;
+    height: 400px;
+    width: 800px;
+}
+
+.msg h1 {
+    color: black;
+    text-align: center;
+    font-size: 200px;
+}
+
+.msg h3 {
+    color: black;
+    text-align: center;
+    font-size: 50px;
 }
