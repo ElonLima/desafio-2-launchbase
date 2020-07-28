@@ -9,6 +9,7 @@ server.set("view engine", "njk")
 
 nunjucks.configure("views", {
     express: server
+    
 })
 
 server.get("/", function(req, res){
@@ -23,6 +24,6 @@ server.use(function(req, res) {
     res.status(404).render("not-found");
 })
 
-server.listen(5000, function(){
+server.listen(5050, function(){
     console.log("server is running")
 })
